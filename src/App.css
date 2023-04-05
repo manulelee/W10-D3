@@ -1,0 +1,38 @@
+body,
+nav {
+  background-color: #000 !important;
+}
+#generi {
+  width: 100px !important;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+#logo {
+  height: 48px;
+}
+
+#avatar {
+  height: 36px;
+}
+
+#avatar-small {
+  height: 24px;
+  margin-right: 10px;
+}
+
+.poster {
+  transition: 0.3s;
+  opacity: 0.8;
+  width: 90%;
+  aspect-ratio: 2/3;
+}
+
+.poster:hover {
+  opacity: 1;
+  transition: 0.3s;
+  cursor: pointer;
+  transform: scale(1.1);
+  position: relative;
+  z-index: 1;
+}
