@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import NotFound from "./NotFound";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { Button, Container } from "react-bootstrap";
+import { Button, Container, Spinner } from "react-bootstrap";
 import AddComment from "./AddComment";
 
 function MovieDetails() {
@@ -143,11 +143,13 @@ function MovieDetails() {
         ) : (
           <Col xs={12} md={6} className="text-light mt-5">
             <h4>No comments for this title...</h4>
-            <AddComment></AddComment>
+            <AddComment getComments={getMovieComments}></AddComment>
           </Col>
         )}
       </Row>
     </Container>
+  ) : isLoading ? (
+    <Spinner animation="border" variant="danger" className="ms-5" />
   ) : (
     <NotFound></NotFound>
   );
