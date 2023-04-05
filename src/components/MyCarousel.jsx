@@ -65,7 +65,7 @@ class MyCarousel extends Component {
   render() {
     return (
       <>
-        <h2 className="text-light mt-2 mb-2 b mx-4">{this.props.nameSaga} saga:</h2>
+        <h2 className="text-light mt-2 mb-2 b mx-4">{this.props.nameSaga}:</h2>
         <Carousel className="mx-4" responsive={this.responsive} infinite={true}>
           {this.state.isLoading && (
             <div className="text-center">
@@ -75,8 +75,8 @@ class MyCarousel extends Component {
               {this.state.isError && <Alert variant="danger">Errore durante il recupero dei titoli</Alert>}
             </div>
           )}
-          {this.state.movies.map((movie) => (
-            <SingleMovie key={movie.imbdID} poster={movie.Poster} />
+          {this.state.movies.map((movie, i) => (
+            <SingleMovie key={movie.imbdID + i} movie={movie} />
           ))}
         </Carousel>
       </>

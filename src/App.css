@@ -36,3 +36,7 @@ nav {
   position: relative;
   z-index: 1;
 }
+#root .card {
+  background-color: #000;
+  color: white;
+}

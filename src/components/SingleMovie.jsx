@@ -1,14 +1,14 @@
-import { Component } from "react";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 
-class SingleMovie extends Component {
-  render() {
-    return (
-      <Col>
-        <img className="img-fluid poster" src={this.props.poster} alt="movie poster" />
-      </Col>
-    );
-  }
-}
+const SingleMovie = (props) => {
+  return (
+    <Col>
+      <Link to={"/movie-details/" + props.movie.imdbID}>
+        <img className="img-fluid poster" src={props.movie.Poster} alt="movie poster" />
+      </Link>
+    </Col>
+  );
+};
 
 export default SingleMovie;
